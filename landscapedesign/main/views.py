@@ -54,3 +54,7 @@ def portfolio_item(request):
 
 def services(request):
     return render(request, 'services.html')
+
+
+def custom_404(request, exception):
+    return render(request, '404.html', {}, status=404)
