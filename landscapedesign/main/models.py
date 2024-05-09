@@ -27,3 +27,12 @@ class Feedback(models.Model):
 
     def __str__(self):
         return f"Feedback from {self.name}"
+
+
+class GalleryImage(models.Model):
+    title = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='gallery_images/')
+    description = models.TextField(blank=True)
+
+    def __str__(self):
+        return self.title
