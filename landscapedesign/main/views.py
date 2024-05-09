@@ -1,45 +1,56 @@
 from django.shortcuts import render
-from .models import Project, Service, GalleryImage, Feedback
-from .forms import FeedbackForm
-from django.http import HttpResponseRedirect
 
 
-# Displays a list of projects, generates the main page based on the Project model and home.html template
 def home(request):
-    projects = Project.objects.all()
-    return render(request, 'main/home.html', {'projects': projects})
+    return render(request, 'index.html')
 
 
-# Retrieves all services from the Service model and passes them to the services.html template
+def about(request):
+    return render(request, 'about.html')
+
+
+# Blog pages; Not used so far
+'''def blog_home_1(request):
+    return render(request, 'blog-home-1.html')
+
+def blog_home_2(request):
+    return render(request, 'blog-home-2.html')
+
+def blog_post(request):
+    return render(request, 'blog-post.html')'''
+
+
+def contact(request):
+    return render(request, 'contact.html')
+
+
+"""
+def faq(request):
+    return render(request, 'faq.html')"""
+
+
+def portfolio_1_col(request):
+    return render(request, 'portfolio-1-col.html')
+
+
+# Other portfolio options
+"""def portfolio_2_col(request):
+    return render(request, 'portfolio-2-col.html')
+
+def portfolio_3_col(request):
+    return render(request, 'portfolio-3-col.html')
+
+def portfolio_4_col(request):
+    return render(request, 'portfolio-4-col.html')
+
+def portfolio_item(request):
+    return render(request, 'portfolio-item.html')"""
+
+
+# Not used so far
+"""def pricing(request):
+    return render(request, 'pricing.html')"""
+
+
 def services(request):
-    services = Service.objects.all()
-    return render(request, 'main/services.html', {'services': services})
-
-
-# Fetches all images from the GalleryImage model and passes them to the gallery.html template
-def gallery(request):
-    images = GalleryImage.objects.all()
-    return render(request, 'main/gallery.html', {'images': images})
-
-
-# Simply renders the about_us.html template. This page typically contains static information about your company.
-def about_us(request):
-    return render(request, 'main/about_us.html')
-
-
-# Handles the feedback form
-def feedback(request):
-    if request.method == 'POST':
-        form = FeedbackForm(request.POST)
-        # If the form is submitted and valid, it saves the feedback and redirects to a thank you page
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect('/thanks/')
-    else:
-        form = FeedbackForm()
-    return render(request, 'main/feedback.html', {'form': form})
-
-
-# Renders a simple thank you page after a user submits the feedback form
-def thanks(request):
-    return render(request, 'main/thanks.html')
+    return render(request, 'services.html')

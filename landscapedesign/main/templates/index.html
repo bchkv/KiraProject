@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> {% load static %}
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -7,18 +7,18 @@
 	<meta name="author" content="">
 	<title>N & LW Lawn Care - Landscaping Bootstrap4 HTML5 Responsive Template </title>
 	<!-- Bootstrap core CSS -->
-	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 	<!-- Fontawesome CSS -->
-	<link href="css/all.css" rel="stylesheet">
+    <link href="{% static 'css/all.css' %}" rel="stylesheet">
 	<!-- Custom styles for this template -->
-	<link href="css/style.css" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-light top-nav fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-            <img src="images/logo.png" alt="logo" />
+            <img src="{% static 'images/logo.png' %}" alt="logo" />
             </a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="fas fa-bars"></span>
@@ -82,21 +82,21 @@
             </ol>
             <div class="carousel-inner" role="listbox">
                <!-- Slide One - Set the background image for this slide in the line below -->
-               <div class="carousel-item active" style="background-image: url('images/slider-01.jpg')">
+               <div class="carousel-item active" style="background-image: url({% static 'images/slider-01.jpg' %})">
                   <div class="carousel-caption d-none d-md-block">
                      <h3>Welcome to N & LW Lawn Care</h3>
                      <p>A Great Theme For Garden Lawn Care</p>
                   </div>
                </div>
                <!-- Slide Two - Set the background image for this slide in the line below -->
-               <div class="carousel-item" style="background-image: url('images/slider-02.jpg')">
+               <div class="carousel-item" style="background-image: url({% static 'images/slider-02.jpg' %})">
                   <div class="carousel-caption d-none d-md-block">
                      <h3>Beautiful Garden</h3>
                      <p>A Great Theme For Garden Lawn Care</p>
                   </div>
                </div>
                <!-- Slide Three - Set the background image for this slide in the line below -->
-               <div class="carousel-item" style="background-image: url('images/slider-03.jpg')">
+               <div class="carousel-item" style="background-image: url({% static 'images/slider-03.jpg' %})">
                   <div class="carousel-caption d-none d-md-block">
                      <h3>Welcome to N & LW Lawn Care</h3>
                      <p>A Great Theme For Garden Lawn Care</p>
@@ -123,7 +123,7 @@
                   <div class="card h-100">
                      <h4 class="card-header">Garden Fence</h4>
                      <div class="card-img">
-                        <img class="img-fluid" src="images/services-img-01.jpg" alt="" />
+                        <img class="img-fluid" src="{% static 'images/services-img-01.jpg' %}" alt="" />
                      </div>
                      <div class="card-body">
                         <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
@@ -137,7 +137,7 @@
                   <div class="card h-100">
                      <h4 class="card-header">Garden Watering</h4>
                      <div class="card-img">
-                        <img class="img-fluid" src="images/services-img-02.jpg" alt="" />
+                        <img class="img-fluid" src="{% static 'images/services-img-02.jpg' %}" alt="" />
                      </div>
                      <div class="card-body">
                         <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
@@ -151,7 +151,7 @@
                   <div class="card h-100">
                      <h4 class="card-header">Garden Supplies</h4>
                      <div class="card-img">
-                        <img class="img-fluid" src="images/services-img-03.jpg" alt="" />
+                        <img class="img-fluid" src="{% static 'images/services-img-03.jpg' %}" alt="" />
                      </div>
                      <div class="card-body">
                         <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
@@ -181,7 +181,7 @@
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
                </div>
                <div class="col-lg-6">
-                  <img class="img-fluid rounded" src="images/about-img.jpg" alt="" />
+                  <img class="img-fluid rounded" src="{% static 'images/about-img.jpg' %}" alt="" />
                </div>
             </div>
             <!-- /.row -->
@@ -194,7 +194,7 @@
                   <div class="card h-100">
                      <div class="card-img">
                         <a href="#">
-                           <img class="card-img-top" src="images/portfolio-img-01.jpg" alt="" />
+                           <img class="card-img-top" src="{% static 'images/portfolio-img-01.jpg' %}" alt="" />
                            <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
                         </a>
                      </div>
@@ -209,7 +209,7 @@
                   <div class="card h-100">
                      <div class="card-img">
                         <a href="#">
-                           <img class="card-img-top" src="images/portfolio-img-02.jpg" alt="" />
+                           <img class="card-img-top" src="{% static 'images/portfolio-img-02.jpg' %}" alt="" />
                            <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
                         </a>
                      </div>
@@ -224,7 +224,7 @@
                   <div class="card h-100">
                      <div class="card-img">
                         <a href="#">
-                           <img class="card-img-top" src="images/portfolio-img-03.jpg" alt="" />
+                           <img class="card-img-top" src="{% static 'images/portfolio-img-03.jpg' %}" alt="" />
                            <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
                         </a>
                      </div>
@@ -239,7 +239,7 @@
                   <div class="card h-100">
                      <div class="card-img">
                         <a href="#">
-                           <img class="card-img-top" src="images/portfolio-img-04.jpg" alt="" />
+                           <img class="card-img-top" src="{% static 'images/portfolio-img-04.jpg' %}" alt="" />
                            <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
                         </a>
                      </div>
@@ -254,7 +254,7 @@
                   <div class="card h-100">
                      <div class="card-img">
                         <a href="#">
-                           <img class="card-img-top" src="images/portfolio-img-05.jpg" alt="" />
+                           <img class="card-img-top" src="{% static 'images/portfolio-img-05.jpg' %}" alt="" />
                            <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
                         </a>
                      </div>
@@ -269,7 +269,7 @@
                   <div class="card h-100">
                      <div class="card-img">
                         <a href="#">
-                           <img class="card-img-top" src="images/portfolio-img-01.jpg" alt="" />
+                           <img class="card-img-top" src="{% static 'images/portfolio-img-01.jpg' %}" alt="" />
                            <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
                         </a>
                      </div>
@@ -345,7 +345,7 @@
 					<ul class="footer_ul_amrc">
 						<li class="media">
 							<div class="media-left">
-								<img class="img-fluid" src="images/post-img-01.jpg" alt="" />
+								<img class="img-fluid" src="{% static 'images/post-img-01.jpg' %}" alt="" />
 							</div>
 							<div class="media-body">
 								<p>How to find best dog food?</p>
@@ -354,7 +354,7 @@
 						</li>
 						<li class="media">
 							<div class="media-left">
-								<img class="img-fluid" src="images/post-img-02.jpg" alt="" />
+								<img class="img-fluid" src="{% static 'images/post-img-02.jpg' %}" alt="" />
 							</div>
 							<div class="media-body">
 								<p>How to find best dog food?</p>
@@ -363,7 +363,7 @@
 						</li>
 						<li class="media">
 							<div class="media-left">
-								<img class="img-fluid" src="images/post-img-03.jpg" alt="" />
+								<img class="img-fluid" src="{% static 'images/post-img-03.jpg' %}" alt="" />
 							</div>
 							<div class="media-body">
 								<p>How to find best dog food?</p>
@@ -377,7 +377,7 @@
 		</div>
         <div class="container">
             <div class="footer-logo">
-				<a href="#"><img src="images/footer-logo.png" alt="" /></a>
+				<a href="#"><img src="{% static 'images/footer-logo.png' %}" alt="" /></a>
 			</div>
             <!--foote_bottom_ul_amrc ends here-->
             <p class="copyright text-center">All Rights Reserved. &copy; 2018 <a href="#">N & LW Lawn Care</a> Design By : 
@@ -394,7 +394,7 @@
     </footer>
 	  
 <!-- Bootstrap core JavaScript -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 </body>
 </html>
