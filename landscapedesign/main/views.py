@@ -48,9 +48,13 @@ def portfolio_item(request):
 
 
 # Not used so far
-"""def pricing(request):
-    return render(request, 'pricing.html')"""
+'''def pricing(request):
+    return render(request, 'pricing.html')'''
 
+
+# TODO: Choose one page variant between portfolo-....html and use it
+def gallery(request):
+    return render(request, 'gallery.html')
 
 def services(request):
     return render(request, 'services.html')
