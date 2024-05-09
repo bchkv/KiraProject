@@ -1,0 +1,12 @@
+<!-- feedback.html -->
+<html>
+<head><title>Feedback - Landscape Design Studio</title></head>
+<body>
+    <h1>Feedback</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Send</button>
+    </form>
+</body>
+</html>

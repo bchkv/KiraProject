@@ -1,0 +1,12 @@
+<!-- services.html -->
+<html>
+<head><title>Services - Landscape Design Studio</title></head>
+<body>
+    <h1>Our Services</h1>
+    <ul>
+        {% for service in services %}
+        <li>{{ service.name }} - {{ service.description }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
