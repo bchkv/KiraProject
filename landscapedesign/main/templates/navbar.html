@@ -10,39 +10,28 @@
 				<span class="fas fa-bars"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
-               <ul class="navbar-nav ml-auto">
-                  <li class="nav-item">
-                     <a class="nav-link active" href="{% url 'home' %}">Домой</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="{% url 'about' %}">О Нас</a>
-                  </li>
-                   <li class="nav-item">
-                     <a class="nav-link" href="{% url 'services' %}">Услуги</a>
-                  </li>
-                   <li class="nav-item">
-                     <a class="nav-link" href="{% url 'portfolio' %}">Портфолио</a>
-                  </li>
-                   <li class="nav-item">
-                     <a class="nav-link" href="{% url 'place_order' %}">Сделать Заказ</a>
-                  </li>
-                  <!--
-                  List of items.
-
-                  <li class="nav-item dropdown">
-                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                     Portfolio
-                     </a>
-                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-                        <a class="dropdown-item" href="portfolio-1-col.html">1 Column Portfolio</a>
-                        <a class="dropdown-item" href="portfolio-2-col.html">2 Column Portfolio</a>
-                        <a class="dropdown-item" href="portfolio-3-col.html">3 Column Portfolio</a>
-                        <a class="dropdown-item" href="portfolio-4-col.html">4 Column Portfolio</a>
-                        <a class="dropdown-item" href="portfolio-item.html">Single Portfolio Item</a>
-                     </div>
-                  </li>
-                  -->
-               </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link {% if current_url_name == 'home' %}active{% endif %}"
+                           href="{% url 'home' %}">Домой</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if current_url_name == 'about' %}active{% endif %}"
+                           href="{% url 'about' %}">О Нас</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if current_url_name == 'services' %}active{% endif %}"
+                           href="{% url 'services' %}">Услуги</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if current_url_name == 'portfolio' %}active{% endif %}"
+                           href="{% url 'portfolio' %}">Портфолио</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if current_url_name == 'place_order' %}active{% endif %}"
+                           href="{% url 'place_order' %}">Сделать Заказ</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
