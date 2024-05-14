@@ -3,7 +3,8 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-light top-nav fixed-top">
         <div class="container">
             <a class="navbar-brand" href="{% url 'home' %}">
-            <img src="{% static 'images/logo.png' %}" alt="logo" />
+            <!-- TODO: Renew the Logo -->
+                <img src="{% static 'images/logo.png' %}" alt="logo" />
             </a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="fas fa-bars"></span>
@@ -11,17 +12,23 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                <ul class="navbar-nav ml-auto">
                   <li class="nav-item">
-                     <a class="nav-link active" href="{% url 'home' %}">Home</a>
+                     <a class="nav-link active" href="{% url 'home' %}">Домой</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="{% url 'about' %}">About</a>
+                     <a class="nav-link" href="{% url 'about' %}">О Нас</a>
                   </li>
                    <li class="nav-item">
-                     <a class="nav-link" href="{% url 'services' %}">Services</a>
+                     <a class="nav-link" href="{% url 'services' %}">Услуги</a>
                   </li>
                    <li class="nav-item">
-                     <a class="nav-link" href="{% url 'gallery' %}">Gallery</a>
+                     <a class="nav-link" href="{% url 'portfolio' %}">Портфолио</a>
                   </li>
+                   <li class="nav-item">
+                     <a class="nav-link" href="{% url 'place_order' %}">Сделать Заказ</a>
+                  </li>
+                  <!--
+                  List of items.
+
                   <li class="nav-item dropdown">
                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                      Portfolio
@@ -34,9 +41,7 @@
                         <a class="dropdown-item" href="portfolio-item.html">Single Portfolio Item</a>
                      </div>
                   </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="{% url 'contact' %}">Contact</a>
-                  </li>
+                  -->
                </ul>
             </div>
         </div>

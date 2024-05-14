@@ -9,6 +9,23 @@ def about(request):
     return render(request, 'about.html')
 
 
+def services(request):
+    return render(request, 'services.html')
+
+
+def portfolio(request):
+    return render(request, 'portfolio.html')
+
+
+# TODO: Leave or Omit?
+def contacts(request):
+    return render(request, 'contacts.html')
+
+
+def custom_404(request, exception):
+    return render(request, '404.html', {}, status=404)
+
+
 # Blog pages; Not used so far
 '''def blog_home_1(request):
     return render(request, 'blog-home-1.html')
@@ -19,19 +36,9 @@ def blog_home_2(request):
 def blog_post(request):
     return render(request, 'blog-post.html')'''
 
-
-def contact(request):
-    return render(request, 'contact.html')
-
-
 """
 def faq(request):
     return render(request, 'faq.html')"""
-
-
-def portfolio_1_col(request):
-    return render(request, 'portfolio-1-col.html')
-
 
 # Other portfolio options
 """def portfolio_2_col(request):
@@ -50,15 +57,3 @@ def portfolio_item(request):
 # Not used so far
 '''def pricing(request):
     return render(request, 'pricing.html')'''
-
-
-# TODO: Choose one page variant between portfolo-....html and use it
-def gallery(request):
-    return render(request, 'gallery.html')
-
-def services(request):
-    return render(request, 'services.html')
-
-
-def custom_404(request, exception):
-    return render(request, '404.html', {}, status=404)
