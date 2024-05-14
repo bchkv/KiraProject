@@ -22,6 +22,10 @@ def contacts(request):
     return render(request, 'contacts.html')
 
 
+def place_order(request):
+    return render(request, 'place_order.html')
+
+
 def custom_404(request, exception):
     return render(request, '404.html', {}, status=404)
 
