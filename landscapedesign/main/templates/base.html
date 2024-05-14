@@ -1,18 +1,21 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>{% block title %}N & LW Lawn Care{% endblock %}</title>
+    <title>{% block title %}ГринЛав{% endblock %}</title>
     <!-- Bootstrap core CSS -->
     <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
     <!-- Fontawesome CSS -->
     <link href="{% static 'css/all.css' %}" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <script src="https://api-maps.yandex.ru/2.1?apikey=ваш API-ключ&lang=ru_RU"
+    type="text/javascript">
+    </script>
 </head>
 <body>
     {% include 'navbar.html' %}
@@ -21,6 +24,7 @@
     <!-- Bootstrap core JavaScript -->
     <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
     <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  </script>
     {% block extra_js %}{% endblock %}
 </body>
 </html>

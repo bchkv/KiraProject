@@ -1,14 +1,16 @@
+<!-- TODO: Add support models for Clients and Team Members -->
+
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}About Us{% endblock %}
+{% block title %}О Нас{% endblock %}
 
 {% block content %}
 	<!-- full Title -->
 	<div class="full-title">
 		<div class="container">
 			<!-- Page Heading/Breadcrumbs -->
-			<h1 class="mt-4 mb-3">About
-				<small>Subheading</small>
+			<h1 class="mt-4 mb-3">О Нас
+				<!--  <small>Subheading</small> -->
 			</h1>
 		</div>
 	</div>
@@ -17,9 +19,9 @@
 		<div class="breadcrumb-main">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item">
-					<a href="index.html">Home</a>
+					<a href="{% url 'home' %}">Главная Страница</a>
 				</li>
-				<li class="breadcrumb-item active">About</li>
+				<li class="breadcrumb-item active">О Нас</li>
 			</ol>
 		</div>
 		<!-- About Content -->
@@ -29,7 +31,7 @@
 					<img class="img-fluid rounded mb-4" src="{% static 'images/about-img.jpg' %}" alt="" />
 				</div>
 				<div class="col-lg-6">
-					<h2>About Modern Business</h2>
+					<h2>О Нашем Бизнесе</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed voluptate nihil eum consectetur similique? Consectetur, quod, incidunt, harum nisi dolores delectus reprehenderit voluptatem perferendis dicta dolorem non blanditiis ex fugiat.</p>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, magni, aperiam vitae illum voluptatum aut sequi impedit non velit ab ea pariatur sint quidem corporis eveniet. Odit, temporibus reprehenderit dolorum!</p>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, consequuntur, modi mollitia corporis ipsa voluptate corrupti eum ratione ex ea praesentium quibusdam? Aut, in eum facere corrupti necessitatibus perspiciatis quis?</p>
@@ -40,14 +42,14 @@
 
 		<!-- Team Members -->
 		<div class="team-members-box">  
-			<h2>Our Team</h2>
+			<h2>Наша Команда</h2>
 			<div class="row">
 				<div class="col-lg-4 mb-4">
 				  <div class="card h-100 text-center">
 					<img class="card-img-top" src="{% static 'images/team_01.jpg' %}" alt="" />
 					<div class="card-body">
-						<h4 class="card-title">Team Member</h4>
-						<h6 class="card-subtitle mb-2 text-muted">Position</h6>
+						<h4 class="card-title">Член Команды</h4>
+						<h6 class="card-subtitle mb-2 text-muted">Должность</h6>
 						<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aut mollitia eum ipsum fugiat odio officiis odit.</p>
 					</div>
 					<div class="card-footer">
@@ -63,8 +65,8 @@
 				  <div class="card h-100 text-center">
 					<img class="card-img-top" src="{% static 'images/team_02.jpg' %}" alt="" />
 					<div class="card-body">
-						<h4 class="card-title">Team Member</h4>
-						<h6 class="card-subtitle mb-2 text-muted">Position</h6>
+						<h4 class="card-title">Член Команды</h4>
+						<h6 class="card-subtitle mb-2 text-muted">Должность</h6>
 						<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aut mollitia eum ipsum fugiat odio officiis odit.</p>
 					</div>
 					<div class="card-footer">
@@ -80,8 +82,8 @@
 				  <div class="card h-100 text-center">
 					<img class="card-img-top" src="{% static 'images/team_03.jpg' %}" alt="" />
 					<div class="card-body">
-						<h4 class="card-title">Team Member</h4>
-						<h6 class="card-subtitle mb-2 text-muted">Position</h6>
+						<h4 class="card-title">Член Команды</h4>
+						<h6 class="card-subtitle mb-2 text-muted">Должность</h6>
 						<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus aut mollitia eum ipsum fugiat odio officiis odit.</p>
 					</div>
 					<div class="card-footer">
@@ -98,7 +100,7 @@
 		</div>
 		<!-- Our Customers -->
 		<div class="customers-box"> 
-			<h2>Our Customers</h2>
+			<h2>Наши Клиенты</h2>
 			<div class="row">
 				<div class="col-lg-2 col-sm-4 mb-4">
 				  <img class="img-fluid" src="{% static 'images/logo_01.png' %}" alt="" />
