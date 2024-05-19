@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .forms import FeedbackForm
 
 
 def home(request):
@@ -17,13 +18,22 @@ def portfolio(request):
     return render(request, 'portfolio.html')
 
 
-# TODO: Leave or Omit?
-def contacts(request):
-    return render(request, 'contacts.html')
+# def contacts(request):
+#     return render(request, 'contacts.html')
 
 
 def place_order(request):
-    return render(request, 'place_order.html')
+    success_message = None  # Initialize success message
+    if request.method == 'POST':
+        form = FeedbackForm(request.POST)
+        if form.is_valid():
+            form.save()  # Save the new contact submission to the database
+            success_message = 'Ваше сообщение было успешно отправлено. Мы свяжемся с вами в ближайшее время.'
+            form = FeedbackForm()  # Reset the form after saving
+    else:
+        form = FeedbackForm()
+
+    return render(request, 'place_order.html', {'form': form, 'success_message': success_message})
 
 
 def custom_404(request, exception):

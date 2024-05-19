@@ -3733,12 +3733,6 @@ readers do not read off random characters that represent icons */
 .fa-yahoo:before {
   content: "\f19e"; }
 
-.fa-yandex:before {
-  content: "\f413"; }
-
-.fa-yandex-international:before {
-  content: "\f414"; }
-
 .fa-yelp:before {
   content: "\f1e9"; }
 
