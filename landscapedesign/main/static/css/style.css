@@ -72,6 +72,12 @@ button.btn-secondary:hover{
 	color: #ffffff;
 	border-radius: 4.8px;
 }
+
+.nav-item {
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
 .navbar-expand-lg.top-nav .navbar-nav .dropdown-menu{
 	margin: 0px;
 	box-shadow: 3px 5px 15px rgba(0,0,0, .15);
