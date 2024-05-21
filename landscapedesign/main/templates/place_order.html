@@ -34,6 +34,15 @@
     </div>
     {% endif %}
 
+    <!-- Error Messages -->
+    {% if messages %}
+    <div class="alert alert-danger mt-4">
+        {% for message in messages %}
+        {{ message }}
+        {% endfor %}
+    </div>
+    {% endif %}
+
     <!-- Content Row -->
     <div class="row">
         <!-- Map Column -->

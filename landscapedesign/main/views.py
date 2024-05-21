@@ -1,7 +1,11 @@
+import logging
 from django.shortcuts import render
 from django.core.mail import send_mail
 from .forms import FeedbackForm
 from django.conf import settings
+from django.contrib import messages
+
+logger = logging.getLogger(__name__)
 
 
 def home(request):
@@ -45,10 +49,16 @@ def place_order(request):
             recipient_list = [settings.DEFAULT_FROM_EMAIL]  # Send to the admin's email
 
             # Send email
-            send_mail(subject, message, from_email, recipient_list)
-
-            success_message = 'Ваше сообщение было успешно отправлено. Мы свяжемся с вами в ближайшее время.'
-            form = FeedbackForm()  # Reset the form after saving
+            try:
+                send_mail(subject, message, from_email, recipient_list)
+                success_message = 'Ваше сообщение было успешно отправлено. Мы свяжемся с вами в ближайшее время.'
+                form = FeedbackForm()  # Reset the form after saving
+            except Exception as e:
+                # Log the detailed error
+                logger.error(f'Error sending email: {str(e)}')
+                # Add a user-friendly error message
+                messages.error(request,
+                               'Произошла ошибка при отправке сообщения. Пожалуйста, попробуйте еще раз позже.')
     else:
         form = FeedbackForm()
 
