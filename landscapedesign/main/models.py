@@ -28,7 +28,8 @@ class Feedback(models.Model):
     # date when the form is submitted
 
     def __str__(self):
-        return f"Feedback from {self.name} on {self.date_submitted.strftime('%Y-%m-%d')}"
+        return (f"Feedback from {self.name} on {self.date_submitted.strftime('%Y-%m-%d')} at"
+                f" {self.date_submitted.strftime('%H:%M:%S')}")
 
 
 class GalleryImage(models.Model):
