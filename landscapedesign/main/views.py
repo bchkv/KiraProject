@@ -1,5 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
+from django.core.mail import send_mail
 from .forms import FeedbackForm
+from django.conf import settings
 
 
 def home(request):
@@ -27,7 +29,24 @@ def place_order(request):
     if request.method == 'POST':
         form = FeedbackForm(request.POST)
         if form.is_valid():
-            form.save()  # Save the new contact submission to the database
+            feedback = form.save()  # Save the new contact submission to the database
+
+            # Prepare email content
+            subject = 'New Feedback Submission'
+            message = f"""
+                        New feedback submission from {feedback.name}.
+
+                        Phone: {feedback.phone}
+                        Email: {feedback.email}
+                        Message:
+                        {feedback.message}
+                        """
+            from_email = settings.DEFAULT_FROM_EMAIL
+            recipient_list = [settings.DEFAULT_FROM_EMAIL]  # Send to the admin's email
+
+            # Send email
+            send_mail(subject, message, from_email, recipient_list)
+
             success_message = 'Ваше сообщение было успешно отправлено. Мы свяжемся с вами в ближайшее время.'
             form = FeedbackForm()  # Reset the form after saving
     else:
