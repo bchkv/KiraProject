@@ -9,28 +9,28 @@ class FeedbackForm(forms.ModelForm):
         widgets = {
             'name': forms.TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Full Name',
+                'placeholder': 'Имя',
                 'id': 'name',
                 'required': 'required',
                 'data-validation-required-message': "Please enter your name."
             }),
             'phone': forms.TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Phone Number',
+                'placeholder': 'Телефон',
                 'id': 'phone',
                 'required': 'required',
                 'data-validation-required-message': "Please enter your phone number."
             }),
             'email': forms.EmailInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Email Address',
+                'placeholder': 'Email Адрес',
                 'id': 'email',
                 'required': 'required',
                 'data-validation-required-message': "Please enter your email address."
             }),
             'message': forms.Textarea(attrs={
                 'class': 'form-control',
-                'placeholder': 'Message',
+                'placeholder': 'Сообщение',
                 'id': 'message',
                 'required': 'required',
                 'data-validation-required-message': "Please enter your message",
