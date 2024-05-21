@@ -12,7 +12,7 @@
                 <!--				   TODO: Make Contacts be dynamically generated-->
                 <p><i class="fa fa-location-arrow"></i> Улица Пушкина, дом Колотушкина </p>
                 <p><i class="fab fa-telegram-plane"></i> <a href="tg://resolve?domain=test_telegram"
-                                                            class="contact-link">test_telegram</a></p>
+                                                            class="contact-link">@test_telegram</a></p>
                 <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/919999878398" class="contact-link">+91-9999878398</a> </p>
                 <p><i class="fa fa-phone"></i> <a href="tel:+919999878398" class="contact-link">+91-9999878398</a></p>
                 <p><i class="fa fa-envelope"></i> <a href="mailto:info@example.com" class="contact-link">info@example.com</a>
@@ -22,7 +22,7 @@
     </div>
     <div class="container">
         <div class="footer-logo">
-            <a href="#"><img src="{% static 'images/footer-logo.png' %}" alt=""/></a>
+            <a href="{% url 'home' %}"><img src="{% static 'images/footer-logo.png' %}" alt=""/></a>
         </div>
         <!--foote_bottom_ul_amrc ends here-->
         <p class="copyright text-center">Все Права Защищены. &copy; 2024 — ГринЛав</p>
