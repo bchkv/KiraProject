@@ -4,28 +4,50 @@ from django.core.mail import send_mail
 from .forms import FeedbackForm
 from django.conf import settings
 from django.contrib import messages
+from .models import Picture, Service, Portfolio
 
 logger = logging.getLogger(__name__)
 
 
 def home(request):
-    return render(request, 'index.html')
+    top_main_picture = Picture.objects.filter(location='top_main')
+    middle_main_picture = Picture.objects.filter(location='middle_main').first()
+    highlighted_services = Service.objects.filter(highlight_on_main=True)[:3]
+    highlighted_portfolio = Portfolio.objects.filter(highlight_on_main=True)[:6]
+
+    context = {
+        'top_main_picture': top_main_picture,
+        'middle_main_picture': middle_main_picture,
+        'highlighted_services': highlighted_services,
+        'highlighted_portfolio': highlighted_portfolio,
+    }
+    return render(request, 'index.html', context)
 
 
 def about(request):
-    return render(request, 'about.html')
+    about_us_picture = Picture.objects.filter(location='about_us').first()
+    context = {
+        'about_us_picture': about_us_picture,
+    }
+    return render(request, 'about.html', context)
 
 
 def services(request):
-    return render(request, 'services.html')
+    services_top_picture = Picture.objects.filter(location='services_top').first()
+    services = Service.objects.all()
+    context = {
+        'services_top_picture': services_top_picture,
+        'services': services,
+    }
+    return render(request, 'services.html', context)
 
 
 def portfolio(request):
-    return render(request, 'portfolio.html')
-
-
-# def contacts(request):
-#     return render(request, 'contacts.html')
+    portfolio_items = Portfolio.objects.all()
+    context = {
+        'portfolio_items': portfolio_items,
+    }
+    return render(request, 'portfolio.html', context)
 
 
 def place_order(request):
@@ -58,7 +80,8 @@ def place_order(request):
                 logger.error(f'Error sending email: {str(e)}')
                 # Add a user-friendly error message
                 messages.error(request,
-                               'Произошла ошибка при отправке сообщения. Пожалуйста, попробуйте еще раз позже.')
+                               'Произошла ошибка при отправке сообщения.'
+                               ' Пожалуйста, попробуйте еще раз позже.')
     else:
         form = FeedbackForm()
 

@@ -47,3 +47,20 @@ class CompanyContact(models.Model):
 
     def __str__(self):
         return f"Contact Information: {self.address}"
+
+
+class Picture(models.Model):
+    LOCATION_CHOICES = [
+        ('top_main', 'Top Main Page'),
+        ('middle_main', 'Middle Main Page'),
+        ('about_us', 'About Us Page'),
+        ('services_top', 'Services Top Page'),
+    ]
+
+    title = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='pictures/')
+    description = models.TextField(blank=True)
+    location = models.CharField(max_length=20, choices=LOCATION_CHOICES, default='top_main')
+
+    def __str__(self):
+        return self.title
