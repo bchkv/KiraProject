@@ -1,11 +1,13 @@
 from django.db import models
 
 
-class Project(models.Model):
+class Portfolio(models.Model):
     title = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='portfolio/')
     description = models.TextField()
-    image = models.ImageField(upload_to='project_images/')
     date_posted = models.DateTimeField(auto_now_add=True)
+    highlight_on_main = models.BooleanField(default=False)  # Field to indicate if the service should be highlighted
+    # on the main page
 
     def __str__(self):
         return self.title
@@ -13,7 +15,10 @@ class Project(models.Model):
 
 class Service(models.Model):
     name = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='services/', blank=True, null=True)
     description = models.TextField()
+    highlight_on_main = models.BooleanField(default=False)  # Field to indicate if the service should be highlighted
+    # on the main page
 
     def __str__(self):
         return self.name
@@ -32,10 +37,13 @@ class Feedback(models.Model):
                 f" {self.date_submitted.strftime('%H:%M:%S')}")
 
 
-class GalleryImage(models.Model):
-    title = models.CharField(max_length=200)
-    image = models.ImageField(upload_to='gallery_images/')
-    description = models.TextField(blank=True)
+class CompanyContact(models.Model):
+    address = models.CharField(max_length=255)
+    phone = models.CharField(max_length=20)
+    email = models.EmailField()
+    working_hours = models.CharField(max_length=255)
+    telegram = models.URLField(blank=True)
+    whatsapp = models.URLField(blank=True)
 
     def __str__(self):
-        return self.title
+        return f"Contact Information: {self.address}"
