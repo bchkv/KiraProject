@@ -10,12 +10,12 @@
                 <h5 class="headin5_amrc col_white_amrc pt2">Контакты</h5>
                 <!--headin5_amrc-->
                 <!--				   TODO: Make Contacts be dynamically generated-->
-                <p><i class="fa fa-location-arrow"></i> Улица Пушкина, дом Колотушкина </p>
-                <p><i class="fab fa-telegram-plane"></i> <a href="tg://resolve?domain=test_telegram"
-                                                            class="contact-link">@test_telegram</a></p>
-                <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/919999878398" class="contact-link">+91-9999878398</a> </p>
-                <p><i class="fa fa-phone"></i> <a href="tel:+919999878398" class="contact-link">+91-9999878398</a></p>
-                <p><i class="fa fa-envelope"></i> <a href="mailto:info@example.com" class="contact-link">info@example.com</a>
+                <p><i class="fa fa-location-arrow"></i> {{ contact_info.address }} </p>
+                <p><i class="fab fa-telegram-plane"></i> <a href="{{ contact_info.telegram_link }}"
+                                                            class="contact-link">{{ contact_info.telegram_username }}</a></p>
+                <p><i class="fab fa-whatsapp"></i> <a href="{{ contact_info.whatsapp_link }}" class="contact-link">{{ contact_info.whatsapp_phone }}</a> </p>
+                <p><i class="fa fa-phone"></i> <a href="tel:{{ contact_info.phone }}" class="contact-link">{{ contact_info.phone }}</a></p>
+                <p><i class="fa fa-envelope"></i> <a href="mailto:{{ contact_info.email }}" class="contact-link">{{ contact_info.email }}</a>
                 </p>
             </div>
         </div>
@@ -28,9 +28,9 @@
         <p class="copyright text-center">Все Права Защищены. &copy; 2024 — ГринЛав</p>
         <!--TODO: Add / Remove Social Network links-->
         <ul class="social_footer_ul">
-            <li><a href="tg://resolve?domain=test_telegram"><i class="fab fa-telegram-plane"></i></a></li>
-            <li><a href="mailto:info@example.com"><i class="fa fa-envelope"></i></a></li>
-            <li><a href="https://wa.me/919999878398"><i class="fab fa-whatsapp"></i></a></li>
+            <li><a href="{{ contact_info.telegram_link }}"><i class="fab fa-telegram-plane"></i></a></li>
+            <li><a href="mailto:{{ contact_info.email }}"><i class="fa fa-envelope"></i></a></li>
+            <li><a href="{{ contact_info.whatsapp_link }}"><i class="fab fa-whatsapp"></i></a></li>
         </ul>
         <!--social_footer_ul ends here-->
     </div>

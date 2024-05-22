@@ -42,14 +42,16 @@ class CompanyContact(models.Model):
     phone = models.CharField(max_length=20)
     email = models.EmailField()
     working_hours = models.CharField(max_length=255)
-    telegram = models.URLField(blank=True)
-    whatsapp = models.URLField(blank=True)
+    telegram_username = models.CharField(max_length=20)
+    telegram_link = models.URLField(blank=True)
+    whatsapp_phone = models.CharField(max_length=20)
+    whatsapp_link = models.URLField(blank=True)
 
     def __str__(self):
         return f"Contact Information: {self.address}"
 
 
-class Picture(models.Model):
+class PagePicture(models.Model):
     LOCATION_CHOICES = [
         ('top_main', 'Top Main Page'),
         ('middle_main', 'Middle Main Page'),
@@ -59,7 +61,6 @@ class Picture(models.Model):
 
     title = models.CharField(max_length=200)
     image = models.ImageField(upload_to='pictures/')
-    description = models.TextField(blank=True)
     location = models.CharField(max_length=20, choices=LOCATION_CHOICES, default='top_main')
 
     def __str__(self):
