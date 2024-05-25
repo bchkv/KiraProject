@@ -4,20 +4,20 @@ from django.core.mail import send_mail
 from .forms import FeedbackForm
 from django.conf import settings
 from django.contrib import messages
-from .models import PagePicture, Service, Portfolio
+from .models import Service, Portfolio
 
 logger = logging.getLogger(__name__)
 
 
 def home(request):
-    top_main_picture = PagePicture.objects.filter(location='top_main')
-    middle_main_picture = PagePicture.objects.filter(location='middle_main').first()
+    # top_main_picture = PagePicture.objects.filter(location='top_main')
+    # middle_main_picture = PagePicture.objects.filter(location='middle_main').first()
     highlighted_services = Service.objects.filter(highlight_on_main=True)[:3]
     highlighted_portfolio = Portfolio.objects.filter(highlight_on_main=True)[:6]
 
     context = {
-        'top_main_picture': top_main_picture,
-        'middle_main_picture': middle_main_picture,
+        # 'top_main_picture': top_main_picture,
+        # 'middle_main_picture': middle_main_picture,
         'highlighted_services': highlighted_services,
         'highlighted_portfolio': highlighted_portfolio,
     }
@@ -25,18 +25,18 @@ def home(request):
 
 
 def about(request):
-    about_us_picture = PagePicture.objects.filter(location='about_us').first()
+    # about_us_picture = PagePicture.objects.filter(location='about_us').first()
     context = {
-        'about_us_picture': about_us_picture,
+        # 'about_us_picture': about_us_picture,
     }
     return render(request, 'about.html', context)
 
 
 def services(request):
-    services_top_picture = PagePicture.objects.filter(location='services_top').first()
+    # services_top_picture = PagePicture.objects.filter(location='services_top').first()
     services = Service.objects.all()
     context = {
-        'services_top_picture': services_top_picture,
+        # 'services_top_picture': services_top_picture,
         'services': services,
     }
     return render(request, 'services.html', context)

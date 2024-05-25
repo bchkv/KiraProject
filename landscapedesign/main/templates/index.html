@@ -1,5 +1,3 @@
-<!--TODO: Russify-->
-
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}Главная Страница — ГринЛав{% endblock %}
@@ -15,191 +13,111 @@
                     Your browser does not support the video tag.
                 </video>
                 <div class="carousel-caption d-none d-md-block">
-                    <h3>Welcome to N & LW Lawn Care</h3>
-                    <p>A Great Theme For Garden Lawn Care</p>
+                    <h3>Добро пожаловать в ГринЛав</h3>
+                    <p>Профессиональные услуги по благоустройству, озеленению и ландшафтному дизайну. Доверьте свой
+                        участок нам!
+                    </p>
                 </div>
             </div>
         </div>
     </div>
 </header>
 <div class="container">
-        <div class="services-bar">
-            <h1 class="my-4">Наши Лучшие Услуги</h1>
-            <!-- Services Section -->
-            <div class="row">
-               <div class="col-lg-4 mb-4">
-                  <div class="card h-100">
-                     <h4 class="card-header">Garden Fence</h4>
-                     <div class="card-img">
-                        <img class="img-fluid" src="{% static 'images/services-img-01.jpg' %}" alt="" />
-                     </div>
-                     <div class="card-body">
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-                     </div>
-                     <div class="card-footer">
+    <div class="services-bar">
+        <h1 class="my-4">Наши Лучшие Услуги</h1>
+        <!-- Services Section -->
+        <div class="row">
+            {% for service in highlighted_services %}
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <h4 class="card-header">{{ service.name }}</h4>
+                    {% if service.image %}
+                    <div class="card-img">
+                        <img class="img-fluid service-image" src="{{ service.image.url }}" alt="{{ service.name }}"/>
+                    </div>
+                    {% endif %}
+                    <div class="card-body">
+                        <p class="card-text">{{ service.description }}</p>
+                    </div>
+                    <!--<div class="card-footer">
                         <a href="#" class="btn btn-primary">Learn More</a>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-lg-4 mb-4">
-                  <div class="card h-100">
-                     <h4 class="card-header">Garden Watering</h4>
-                     <div class="card-img">
-                        <img class="img-fluid" src="{% static 'images/services-img-02.jpg' %}" alt="" />
-                     </div>
-                     <div class="card-body">
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-                     </div>
-                     <div class="card-footer">
-                        <a href="#" class="btn btn-primary">Learn More</a>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-lg-4 mb-4">
-                  <div class="card h-100">
-                     <h4 class="card-header">Garden Supplies</h4>
-                     <div class="card-img">
-                        <img class="img-fluid" src="{% static 'images/services-img-03.jpg' %}" alt="" />
-                     </div>
-                     <div class="card-body">
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-                     </div>
-                     <div class="card-footer">
-                        <a href="#" class="btn btn-primary">Learn More</a>
-                     </div>
-                  </div>
-               </div>
+                    </div>-->
+                </div>
             </div>
-            <!-- /.row -->
+            {% endfor %}
         </div>
-        <!-- About Section -->
-        <div class="about-main">
-            <div class="row">
-               <div class="col-lg-6">
-                  <h2>Welcome to N & LW Lawn Care</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                  <h5>Our smart approach</h5>
-                  <ul>
-                     <li>Sed at tellus eu quam posuere mattis.</li>
-                     <li>Phasellus quis erat et enim laoreet posuere ac porttitor ipsum.</li>
-                     <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                     <li>Duis porttitor odio pellentesque mollis vulputate.</li>
-                     <li>Quisque ac eros non ex hendrerit vehicula.</li>
-                  </ul>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
-               </div>
-               <div class="col-lg-6">
-                  <img class="img-fluid rounded" src="{{ middle_main_picture.image.url }}" alt="{{ middle_main_picture.title }}" />
-               </div>
+        <!-- /.row -->
+    </div>
+
+    <!-- Add the CSS class for images if not already added -->
+    <style>
+        .service-image {
+            height: 200px; /* Set a fixed height for all images */
+            object-fit: cover; /* Maintain aspect ratio while filling the height */
+            width: 100%; /* Ensure the image takes the full width of the container */
+        }
+    </style>
+
+    <!-- About Section -->
+    <div class="about-main">
+        <div class="row">
+            <div class="col-lg-6 text-normal">
+                <h2>Добро пожаловать в ГринЛав</h2>
+                <p>Наша компания специализируется на благоустройстве и озеленении, предлагая профессиональные услуги по
+                    созданию красивых и функциональных ландшафтов.</p>
+                <h5>Наш умный подход</h5>
+                <ul>
+                    <li>Мы предлагаем индивидуальные решения, учитывающие все ваши пожелания.</li>
+                    <li>Наши специалисты используют только лучшие материалы и современное оборудование.</li>
+                    <li>Мы обеспечиваем высокий уровень качества на каждом этапе работы.</li>
+                    <li>Наша команда всегда готова помочь вам с любыми вопросами и предложениями.</li>
+                    <li>Мы стремимся создать для вас уютное и красивое пространство.</li>
+                </ul>
+                <p>ГринЛав — это ваш надежный партнер в вопросах благоустройства и озеленения. Мы гордимся своей работой
+                    и делаем все возможное, чтобы вы остались довольны результатом. Свяжитесь с нами, и мы поможем вам
+                    воплотить ваши мечты в реальность.</p>
             </div>
-            <!-- /.row -->
+            <div class="col-lg-6">
+                <img class="img-fluid rounded" src="{% static 'images/cat.jpeg' %}"
+                     alt="middle_main_picture"/>
+            </div>
         </div>
-        <!-- Portfolio Section -->
-        <div class="portfolio-main">
-            <h2>Наши Работы</h2>
-            <div class="row">
-               <div class="col-lg-4 col-sm-6 portfolio-item">
-                  <div class="card h-100">
-                     <div class="card-img">
-                        <a href="#">
-                           <img class="card-img-top" src="{% static 'images/portfolio-img-01.jpg' %}" alt="" />
-                           <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
-                        </a>
-                     </div>
-                     <div class="card-body">
-                        <h4 class="card-title">
-                           <a href="#">Lawn & garden care</a>
-                        </h4>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-lg-4 col-sm-6 portfolio-item">
-                  <div class="card h-100">
-                     <div class="card-img">
-                        <a href="#">
-                           <img class="card-img-top" src="{% static 'images/portfolio-img-02.jpg' %}" alt="" />
-                           <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
-                        </a>
-                     </div>
-                     <div class="card-body">
-                        <h4 class="card-title">
-                           <a href="#">Lawn renovation</a>
-                        </h4>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-lg-4 col-sm-6 portfolio-item">
-                  <div class="card h-100">
-                     <div class="card-img">
-                        <a href="#">
-                           <img class="card-img-top" src="{% static 'images/portfolio-img-03.jpg' %}" alt="" />
-                           <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
-                        </a>
-                     </div>
-                     <div class="card-body">
-                        <h4 class="card-title">
-                           <a href="#">Tree planting</a>
-                        </h4>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-lg-4 col-sm-6 portfolio-item">
-                  <div class="card h-100">
-                     <div class="card-img">
-                        <a href="#">
-                           <img class="card-img-top" src="{% static 'images/portfolio-img-04.jpg' %}" alt="" />
-                           <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
-                        </a>
-                     </div>
-                     <div class="card-body">
-                        <h4 class="card-title">
-                           <a href="#">Water Baganig</a>
-                        </h4>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-lg-4 col-sm-6 portfolio-item">
-                  <div class="card h-100">
-                     <div class="card-img">
-                        <a href="#">
-                           <img class="card-img-top" src="{% static 'images/portfolio-img-05.jpg' %}" alt="" />
-                           <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
-                        </a>
-                     </div>
-                     <div class="card-body">
-                        <h4 class="card-title">
-                           <a href="#">Growing plants</a>
-                        </h4>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-lg-4 col-sm-6 portfolio-item">
-                  <div class="card h-100">
-                     <div class="card-img">
-                        <a href="#">
-                           <img class="card-img-top" src="{% static 'images/portfolio-img-01.jpg' %}" alt="" />
-                           <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
-                        </a>
-                     </div>
-                     <div class="card-body">
-                        <h4 class="card-title">
-                           <a href="#">Snow removal</a>
-                        </h4>
-                     </div>
-                  </div>
-               </div>
+        <!-- /.row -->
+    </div>
+    <!-- Portfolio Section -->
+    <div class="portfolio-main">
+    <h2>Наши Работы</h2>
+    <div class="row">
+        {% for item in highlighted_portfolio %}
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+            <div class="card h-100">
+                <div class="card-img">
+                        <img class="card-img-top" src="{{ item.image.url }}" alt="{{ item.title }}" />
+                        <div class="overlay"><i class="fas fa-arrows-alt"></i></div>
+
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <a href="{% url 'portfolio' %}">{{ item.title }}</a>
+                    </h4>
+                </div>
             </div>
-            <!-- /.row -->
         </div>
-        <hr>
-        <!-- Get In Touch Now Section -->
-        <div class="row mb-4">
-            <div class="col-md-8">
-               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
-            </div>
-            <div class="col-md-4">
-               <a class="btn btn-lg btn-secondary btn-block" href="{% url 'place_order' %}">Закажите Звонок Сейчас</a>
-            </div>
+        {% endfor %}
+    </div>
+    <!-- /.row -->
+</div>
+
+    <hr>
+    <!-- Get In Touch Now Section -->
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <p>Cвяжитесь с нами уже сегодня и получите консультацию по всем интересующим вас вопросам.
+                Наши специалисты предложат вам лучшие решения, учитывая все ваши пожелания и потребности..</p>
+        </div>
+        <div class="col-md-4">
+            <a class="btn btn-lg btn-secondary btn-block" href="{% url 'place_order' %}">Закажите Звонок Сейчас</a>
         </div>
     </div>
+</div>
 {% endblock %}

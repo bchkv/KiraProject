@@ -3,7 +3,6 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-light top-nav fixed-top">
         <div class="container">
             <a class="navbar-brand" href="{% url 'home' %}">
-            <!-- TODO: Renew the Logo -->
                 <img src="{% static 'images/logo.png' %}" alt="logo" />
             </a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,23 +11,23 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link {% if current_url_name == 'home' %}active{% endif %}"
+                        <a class="nav-link kosugi-font {% if current_url_name == 'home' %}active{% endif %}"
                            href="{% url 'home' %}">На Главную</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if current_url_name == 'about' %}active{% endif %}"
+                        <a class="nav-link kosugi-font {% if current_url_name == 'about' %}active{% endif %}"
                            href="{% url 'about' %}">О Нас</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if current_url_name == 'services' %}active{% endif %}"
+                        <a class="nav-link kosugi-font {% if current_url_name == 'services' %}active{% endif %}"
                            href="{% url 'services' %}">Услуги</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if current_url_name == 'portfolio' %}active{% endif %}"
+                        <a class="nav-link kosugi-font {% if current_url_name == 'portfolio' %}active{% endif %}"
                            href="{% url 'portfolio' %}">Портфолио</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if current_url_name == 'place_order' %}active{% endif %}"
+                        <a class="nav-link kosugi-font {% if current_url_name == 'place_order' %}active{% endif %}"
                            href="{% url 'place_order' %}">Сделать Заказ</a>
                     </li>
                 </ul>

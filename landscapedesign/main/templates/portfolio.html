@@ -20,92 +20,30 @@
 		<div class="breadcrumb-main">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item">
-					<a href="index.html">Главная Страница</a>
+					<a href="{% url 'home' %}">Главная Страница</a>
 				</li>
 				<li class="breadcrumb-item active">Портфолио</li>
 			</ol>
 		</div>
-	<div class="project-inner">
-		<!-- Project One -->
-		<div class="row">
-			<div class="col-md-7">
-				<a href="#">
-					<img class="img-fluid rounded mb-3 mb-md-0" src="{% static 'images/portfolio-big-01.jpg' %}" alt="" />
-				</a>
+		{% for item in portfolio_items %}
+		<div class="project-inner">
+			<!-- Project {{ forloop.counter }} -->
+			<div class="row">
+				<div class="col-md-7">
+						<img class="img-fluid rounded mb-3 mb-md-0 portfolio-image" src="{{ item.image.url }}" alt="{{ item.title }}" />
+				</div>
+				<div class="col-md-5">
+					<h3>{{ item.title }}</h3>
+					<p>{{ item.description }}</p>
+<!--					<a class="btn btn-primary" href="#">Посмотреть проект-->
+<!--						<span class="glyphicon glyphicon-chevron-right"></span>-->
+<!--					</a>-->
+				</div>
 			</div>
-			<div class="col-md-5">
-				<h3>Morbi eu nulla ac mauris euismod aliquet.</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-				<p>Suspendisse potenti. Suspendisse potenti. Phasellus rutrum metus at odio consectetur tempus. Pellentesque sed tellus et ligula luctus auctor et non erat.</p>
-				<a class="btn btn-primary" href="#">View Project
-					<span class="glyphicon glyphicon-chevron-right"></span>
-				</a>
-			</div>
+			<!-- /.row -->
 		</div>
-		<!-- /.row -->
-	</div>
-    <hr>
-	<div class="project-inner">
-		<!-- Project Two -->
-		<div class="row">
-			<div class="col-md-7">
-			  <a href="#">
-				<img class="img-fluid rounded mb-3 mb-md-0" src="{% static 'images/portfolio-big-02.jpg' %}" alt="" />
-			  </a>
-			</div>
-			<div class="col-md-5">
-			  <h3>Morbi eu nulla ac mauris euismod aliquet.</h3>
-			  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-			  <p>Suspendisse potenti. Suspendisse potenti. Phasellus rutrum metus at odio consectetur tempus. Pellentesque sed tellus et ligula luctus auctor et non erat.</p>
-			  <a class="btn btn-primary" href="#">View Project
-				<span class="glyphicon glyphicon-chevron-right"></span>
-			  </a>
-			</div>
-		</div>
-		<!-- /.row -->
-	</div>
-    <hr>
-	<div class="project-inner">
-		<!-- Project Three -->
-		<div class="row">
-			<div class="col-md-7">
-				<a href="#">
-					<img class="img-fluid rounded mb-3 mb-md-0" src="{% static 'images/portfolio-big-03.jpg' %}" alt="" />
-				</a>
-			</div>
-			<div class="col-md-5">
-				<h3>Morbi eu nulla ac mauris euismod aliquet.</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-				<p>Suspendisse potenti. Suspendisse potenti. Phasellus rutrum metus at odio consectetur tempus. Pellentesque sed tellus et ligula luctus auctor et non erat.</p>
-				<a class="btn btn-primary" href="#">View Project
-					<span class="glyphicon glyphicon-chevron-right"></span>
-				</a>
-			</div>
-		</div>
-		<!-- /.row -->
-	</div>
-    <hr>
-
-    <!-- Project Four -->
-	<div class="project-inner">
-		<div class="row">		
-			<div class="col-md-7">
-				<a href="#">
-					<img class="img-fluid rounded mb-3 mb-md-0" src="{% static 'images/portfolio-big-04.jpg' %}" alt="" />
-				</a>
-			</div>
-			<div class="col-md-5">
-				<h3>Morbi eu nulla ac mauris euismod aliquet.</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
-				<p>Suspendisse potenti. Suspendisse potenti. Phasellus rutrum metus at odio consectetur tempus. Pellentesque sed tellus et ligula luctus auctor et non erat.</p>
-				<a class="btn btn-primary" href="#">View Project
-					<span class="glyphicon glyphicon-chevron-right"></span>
-				</a>
-			</div>
-		</div>
-		<!-- /.row -->
-	</div>
 		<hr>
+		{% endfor %}
     </div>
     <!-- /.container -->
 {% endblock %}

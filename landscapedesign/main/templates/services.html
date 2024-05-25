@@ -5,77 +5,51 @@
 {% block title %}Сервисы - ГринЛав{% endblock %}
 
 {% block content %}
-	<!-- full Title -->
-	<div class="full-title">
-		<div class="container">
-			<!-- Page Heading/Breadcrumbs -->
-			<h1 class="mt-4 mb-3">Услуги
-				<!-- <small>Subheading</small> -->
-			</h1>
-		</div>
-	</div>
-	
+    <!-- full Title -->
+    <div class="full-title">
+        <div class="container">
+            <!-- Page Heading/Breadcrumbs -->
+            <h1 class="mt-4 mb-3">Услуги
+                <!-- <small>Subheading</small> -->
+            </h1>
+        </div>
+    </div>
+
     <!-- Page Content -->
     <div class="container">
-		<div class="breadcrumb-main">
-			<ol class="breadcrumb">
-				<li class="breadcrumb-item">
-					<a href="{% url 'home' %}">Главная Страница</a>
-				</li>
-				<li class="breadcrumb-item active">Услуги</li>
-			</ol>
-		</div>
+        <div class="breadcrumb-main">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="{% url 'home' %}">Главная Страница</a>
+                </li>
+                <li class="breadcrumb-item active">Услуги</li>
+            </ol>
+        </div>
 
-		<!-- Image Header -->
-		<img class="img-fluid rounded mb-4" src="{% static 'images/services-big.jpg' %}" alt="" />
+        <!-- Image Header -->
+        {% if services_top_picture %}
+        <img class="img-fluid rounded mb-4" src="{{ services_top_picture.image.url }}" alt="{{ services_top_picture.title }}" />
+        {% endif %}
 
-		<!-- Services Section -->
-		<div class="services-bar">
-            <h1 class="my-4">Our Best Services </h1>
-            <!-- Services Section -->
+        <!-- Services Section -->
+        <div class="services-bar" style="text-transform: none !important;">
+            <h1 class="my-4">Список Услуг</h1>
             <div class="row">
-               <div class="col-lg-4 mb-4">
-                  <div class="card h-100">
-                     <h4 class="card-header">Garden Fence</h4>
-                     <div class="card-img">
-                        <img class="img-fluid" src="{% static 'images/services-img-01.jpg' %}" alt="" />
-                     </div>
-                     <div class="card-body">
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-                     </div>
-                     <div class="card-footer">
-                        <a href="#" class="btn btn-primary">Learn More</a>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-lg-4 mb-4">
-                  <div class="card h-100">
-                     <h4 class="card-header">Garden Watering</h4>
-                     <div class="card-img">
-                        <img class="img-fluid" src="{% static 'images/services-img-02.jpg' %}" alt="" />
-                     </div>
-                     <div class="card-body">
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-                     </div>
-                     <div class="card-footer">
-                        <a href="#" class="btn btn-primary">Learn More</a>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-lg-4 mb-4">
-                  <div class="card h-100">
-                     <h4 class="card-header">Garden Supplies</h4>
-                     <div class="card-img">
-                        <img class="img-fluid" src="{% static 'images/services-img-03.jpg' %}" alt="" />
-                     </div>
-                     <div class="card-body">
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-                     </div>
-                     <div class="card-footer">
-                        <a href="#" class="btn btn-primary">Learn More</a>
-                     </div>
-                  </div>
-               </div>
+                {% for service in services %}
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100">
+                        <h4 class="card-header">{{ service.name }}</h4>
+                        {% if service.image %}
+                        <div class="card-img">
+                            <img class="img-fluid service-image" src="{{ service.image.url }}" alt="{{ service.name }}" />
+                        </div>
+                        {% endif %}
+                        <div class="card-body">
+                            <p class="card-text">{{ service.description }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
             </div>
             <!-- /.row -->
         </div>

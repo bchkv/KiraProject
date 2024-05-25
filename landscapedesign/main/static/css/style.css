@@ -12,6 +12,16 @@ body {
   color: #4e3914;
 }
 
+@font-face {
+    font-family: 'KosugiMaru';
+    src: url('../fonts/KosugiMaru-Regular.ttf') format('truetype');
+}
+
+.kosugi-font {
+    font-family: 'KosugiMaru', sans-serif;
+}
+
+
 @media (min-width: 992px) {
   body {
     padding-top: 80px;
@@ -158,7 +168,7 @@ button.btn-secondary:hover{
 }
 .about-main p{
 	font-size: 14px;
-	text-transform: capitalize;
+	text-transform: none;
 }
 .about-main ul{
 	padding-left: 20px;
@@ -606,6 +616,16 @@ footer p {
 	text-align: center;
 	background: #4e3914;
 	color: #ffffff;
+}
+.service-image {
+    height: 200px; /* Set a fixed height for all images */
+    object-fit: cover; /* Maintain aspect ratio while filling the height */
+    width: 100%; /* Ensure the image takes the full width of the container */
+}
+.portfolio-image {
+    height: 100%; /* Set a fixed height for all images */
+    object-fit: cover; /* Maintain aspect ratio while filling the height */
+    width: 100%; /* Ensure the image takes the full width of the container */
 }
 .most_popular{
 	position: absolute;

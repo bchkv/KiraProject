@@ -50,7 +50,7 @@ class CompanyContact(models.Model):
     def __str__(self):
         return f"Contact Information: {self.address}"
 
-
+'''
 class PagePicture(models.Model):
     LOCATION_CHOICES = [
         ('top_main', 'Top Main Page'),
@@ -64,4 +64,4 @@ class PagePicture(models.Model):
     location = models.CharField(max_length=20, choices=LOCATION_CHOICES, default='top_main')
 
     def __str__(self):
-        return self.title
+        return self.title'''
